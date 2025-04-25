@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Fidelis Erza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+    background-image: url(Latar\ Belakang\ lagi\ .jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 40px;
+    position: relative;
+    z-index: 0;
+}
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.857);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .profile-img {
+            width: 150px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .info p {
+            margin: 6px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .nav-buttons button {
+            background-color: #871212;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #000000;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th {
+            background-color: #871212;
+        }
+
+        .schedule-section {
+            display: none;
+        }
+
+        .schedule-section.active {
+            display: block;
+        }
+
+        .education-timeline {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .education-timeline li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .education-timeline li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #871212;
+            font-size: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .profile-img {
+                width: 100%;
+            }
+        }
+    </style>
+    <script>
+        function showSchedule(dayId) {
+            const sections = document.querySelectorAll('.schedule-section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(dayId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Profil Pribadi</h1>
+            <div class="info">
+                <p><strong>Nama :</strong> Fidelis Erza Firmandika</p>
+                <p><strong>NPM :</strong> E1G022054</p>
+                <p><strong>Program Studi :</strong> Teknologi Industri</p>
+                <p><strong>Universitas :</strong> Universitas Bengkulu</p>
+                <p><strong>Email :</strong> fideliserza12@gmail.com</p>
+                <p><strong>Asal :</strong> Sidodadi, Pondok Kelapa, Bengkulu Tengah</p>
+                <p><strong>Hobi :</strong> Selain Mencintaimu, aku juga hobi balap</p>
+                <p><strong>Foto :</strong></p>
+                <img class="profile-img" src="Fidel.jpg" alt="Foto Fidelis Erza">
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Riwayat Pendidikan</h2>
+            <ul class="education-timeline">
+                <li><strong>SD:</strong> SD Negeri 06 Pondok Kelapa, Bengkulu Tengah</li>
+                <li><strong>SMP:</strong> SMP Negeri 02 Bengkulu Tengah</li>
+                <li><strong>SMA (Kelas 1-2):</strong> SMA Xaverius 1 Palembang</li>
+                <li><strong>SMA (Kelas 3):</strong> SMA Sint Carolus Bengkulu</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Jadwal Kuliah Semester</h2>
+            <div class="nav-buttons">
+                <button onclick="showSchedule('senin')">Senin</button>
+                <button onclick="showSchedule('selasa')">Selasa</button>
+                <button onclick="showSchedule('rabu')">Rabu</button>
+                <button onclick="showSchedule('kamis')">Kamis</button>
+                <button onclick="showSchedule('jumat')">Jumat</button>
+            </div>
+        </div>
+
+        <div class="card schedule-section" id="senin">
+            <h2>Senin</h2>
+            <table>
+                <tr><th>Jam</th><th>Mata Kuliah</th><th>Dosen</th><th>Ruangan</th></tr>
+                <tr><td>08.00 - 09.40</td><td>Komputer & Pemrograman</td><td>Arina Fatharani</td><td>Diklat 3 R.20</td></tr>
+                <tr><td>10.00 - 11.40</td><td>Rekayasa Proses</td><td>Wica</td><td>Diklat 3 R.20</td></tr>
+                <tr><td>14.00 - 15.40</td><td>Karya Tulis Ilmiah</td><td>Wica</td><td>GB 1 R.4</td></tr>
+            </table>
+        </div>
+
+        <div class="card schedule-section" id="selasa">
+            <h2>Selasa</h2>
+            <table>
+                <tr><th>Jam</th><th>Mata Kuliah</th><th>Dosen</th><th>Ruangan</th></tr>
+                <tr><td>14.00 - 15.40</td><td>Statistik Dasar</td><td>-</td><td>Diklat 3 R.21</td></tr>
+            </table>
+        </div>
+
+        <div class="card schedule-section" id="rabu">
+            <h2>Rabu</h2>
+            <table>
+                <tr><th>Jam</th><th>Mata Kuliah</th><th>Dosen</th><th>Ruangan</th></tr>
+                <tr><td>10.00 - 11.40</td><td>Bahasa Inggris Akademik</td><td>-</td><td>Diklat 3 R.20</td></tr>
+                <tr><td>12.00 - 13.40</td><td>Proyek Perencanaan Industri</td><td>-</td><td>GB 1 R.15</td></tr>
+                <tr><td>14.00 - 15.40</td><td>Analisis Pengambilan Keputusan</td><td>-</td><td>GB 1 R.4</td></tr>
+            </table>
+        </div>
+
+        <div class="card schedule-section" id="kamis">
+            <h2>Kamis</h2>
+            <table>
+                <tr>
+                    <th>Jam</th>
+                    <th>Mata Kuliah</th>
+                    <th>Dosen</th>
+                    <th>Ruangan</th></tr>
+                <tr>
+                    </td>
+                    <td>Ketentuan Dosen</td>
+                    <td>Studi Lapangan Industri</td>
+                    <td>-</td>
+                    <td>GB 1 R.4</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card schedule-section" id="jumat">
+            <h2>Jumat</h2>
+            <table>
+                <tr>
+                    <th>Jam</th>
+                    <th>Mata Kuliah</th>
+                    <th>Dosen</th>
+                    <th>Ruangan</th>
+                </tr>
+                <tr>
+                    <td>08.00 - 09.40</td>
+                    <td>Teknologi Hasil Perkebunan</td>
+                    <td>-</td>
+                    <td>GB 1 R.9</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
